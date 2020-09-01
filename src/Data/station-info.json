@@ -1,0 +1,1130 @@
+{
+    "1호선": [
+        {
+            "station": "동대문",
+            "stno": "155"
+        },
+        {
+            "station": "동묘앞",
+            "stno": "159"
+        },
+        {
+            "station": "서울역",
+            "stno": "150"
+        },
+        {
+            "station": "시청",
+            "stno": "151"
+        },
+        {
+            "station": "신설동",
+            "stno": "156"
+        },
+        {
+            "station": "제기동",
+            "stno": "157"
+        },
+        {
+            "station": "종각",
+            "stno": "152"
+        },
+        {
+            "station": "종로3가",
+            "stno": "153"
+        },
+        {
+            "station": "종로5가",
+            "stno": "154"
+        },
+        {
+            "station": "청량리",
+            "stno": "158"
+        }
+    ],
+    "2호선": [
+        {
+            "station": "강남",
+            "stno": "222"
+        },
+        {
+            "station": "강변",
+            "stno": "214"
+        },
+        {
+            "station": "건대입구",
+            "stno": "212"
+        },
+        {
+            "station": "교대",
+            "stno": "223"
+        },
+        {
+            "station": "구로디지털단지",
+            "stno": "232"
+        },
+        {
+            "station": "구의",
+            "stno": "213"
+        },
+        {
+            "station": "낙성대",
+            "stno": "227"
+        },
+        {
+            "station": "당산",
+            "stno": "237"
+        },
+        {
+            "station": "대림",
+            "stno": "233"
+        },
+        {
+            "station": "도림천",
+            "stno": "247"
+        },
+        {
+            "station": "동대문역사문화공원",
+            "stno": "205"
+        },
+        {
+            "station": "뚝섬",
+            "stno": "210"
+        },
+        {
+            "station": "문래",
+            "stno": "235"
+        },
+        {
+            "station": "방배",
+            "stno": "225"
+        },
+        {
+            "station": "봉천",
+            "stno": "229"
+        },
+        {
+            "station": "사당",
+            "stno": "226"
+        },
+        {
+            "station": "삼성",
+            "stno": "219"
+        },
+        {
+            "station": "상왕십리",
+            "stno": "207"
+        },
+        {
+            "station": "서울대입구",
+            "stno": "228"
+        },
+        {
+            "station": "서초",
+            "stno": "224"
+        },
+        {
+            "station": "선릉",
+            "stno": "220"
+        },
+        {
+            "station": "성수",
+            "stno": "211"
+        },
+        {
+            "station": "시청",
+            "stno": "201"
+        },
+        {
+            "station": "신답",
+            "stno": "245"
+        },
+        {
+            "station": "신당",
+            "stno": "206"
+        },
+        {
+            "station": "신대방",
+            "stno": "231"
+        },
+        {
+            "station": "신도림",
+            "stno": "234"
+        },
+        {
+            "station": "신림",
+            "stno": "230"
+        },
+        {
+            "station": "신설동",
+            "stno": "246"
+        },
+        {
+            "station": "신정네거리",
+            "stno": "249"
+        },
+        {
+            "station": "신촌",
+            "stno": "240"
+        },
+        {
+            "station": "아현",
+            "stno": "242"
+        },
+        {
+            "station": "양천구청",
+            "stno": "248"
+        },
+        {
+            "station": "역삼",
+            "stno": "221"
+        },
+        {
+            "station": "영등포구청",
+            "stno": "236"
+        },
+        {
+            "station": "왕십리",
+            "stno": "208"
+        },
+        {
+            "station": "용답",
+            "stno": "244"
+        },
+        {
+            "station": "용두",
+            "stno": "250"
+        },
+        {
+            "station": "을지로3가",
+            "stno": "203"
+        },
+        {
+            "station": "을지로4가",
+            "stno": "204"
+        },
+        {
+            "station": "을지로입구",
+            "stno": "202"
+        },
+        {
+            "station": "이대",
+            "stno": "241"
+        },
+        {
+            "station": "잠실",
+            "stno": "216"
+        },
+        {
+            "station": "잠실나루",
+            "stno": "215"
+        },
+        {
+            "station": "잠실새내",
+            "stno": "217"
+        },
+        {
+            "station": "종합운동장",
+            "stno": "218"
+        },
+        {
+            "station": "충정로",
+            "stno": "243"
+        },
+        {
+            "station": "한양대",
+            "stno": "209"
+        },
+        {
+            "station": "합정",
+            "stno": "238"
+        },
+        {
+            "station": "홍대입구",
+            "stno": "239"
+        }
+    ],
+    "3호선": [
+        {
+            "station": "가락시장",
+            "stno": "340"
+        },
+        {
+            "station": "경복궁",
+            "stno": "317"
+        },
+        {
+            "station": "경찰병원",
+            "stno": "341"
+        },
+        {
+            "station": "고속터미널",
+            "stno": "329"
+        },
+        {
+            "station": "교대",
+            "stno": "330"
+        },
+        {
+            "station": "구파발",
+            "stno": "310"
+        },
+        {
+            "station": "금호",
+            "stno": "324"
+        },
+        {
+            "station": "남부터미널",
+            "stno": "331"
+        },
+        {
+            "station": "녹번",
+            "stno": "313"
+        },
+        {
+            "station": "대청",
+            "stno": "337"
+        },
+        {
+            "station": "대치",
+            "stno": "335"
+        },
+        {
+            "station": "도곡",
+            "stno": "334"
+        },
+        {
+            "station": "독립문",
+            "stno": "316"
+        },
+        {
+            "station": "동대입구",
+            "stno": "322"
+        },
+        {
+            "station": "매봉",
+            "stno": "333"
+        },
+        {
+            "station": "무악재",
+            "stno": "315"
+        },
+        {
+            "station": "불광",
+            "stno": "312"
+        },
+        {
+            "station": "수서",
+            "stno": "339"
+        },
+        {
+            "station": "신사",
+            "stno": "327"
+        },
+        {
+            "station": "안국",
+            "stno": "318"
+        },
+        {
+            "station": "압구정",
+            "stno": "326"
+        },
+        {
+            "station": "약수",
+            "stno": "323"
+        },
+        {
+            "station": "양재",
+            "stno": "332"
+        },
+        {
+            "station": "연신내",
+            "stno": "311"
+        },
+        {
+            "station": "오금",
+            "stno": "342"
+        },
+        {
+            "station": "옥수",
+            "stno": "325"
+        },
+        {
+            "station": "을지로3가",
+            "stno": "320"
+        },
+        {
+            "station": "일원",
+            "stno": "338"
+        },
+        {
+            "station": "잠원",
+            "stno": "328"
+        },
+        {
+            "station": "종로3가",
+            "stno": "319"
+        },
+        {
+            "station": "지축",
+            "stno": "309"
+        },
+        {
+            "station": "학여울",
+            "stno": "336"
+        },
+        {
+            "station": "홍제",
+            "stno": "314"
+        }
+    ],
+    "4호선": [
+        {
+            "station": "길음",
+            "stno": "417"
+        },
+        {
+            "station": "남태령",
+            "stno": "434"
+        },
+        {
+            "station": "노원",
+            "stno": "411"
+        },
+        {
+            "station": "당고개",
+            "stno": "409"
+        },
+        {
+            "station": "동대문",
+            "stno": "421"
+        },
+        {
+            "station": "동대문역사문화공원",
+            "stno": "422"
+        },
+        {
+            "station": "동작",
+            "stno": "431"
+        },
+        {
+            "station": "명동",
+            "stno": "424"
+        },
+        {
+            "station": "미아",
+            "stno": "415"
+        },
+        {
+            "station": "미아사거리",
+            "stno": "416"
+        },
+        {
+            "station": "사당",
+            "stno": "433"
+        },
+        {
+            "station": "삼각지",
+            "stno": "428"
+        },
+        {
+            "station": "상계",
+            "stno": "410"
+        },
+        {
+            "station": "서울역",
+            "stno": "426"
+        },
+        {
+            "station": "성신여대입구",
+            "stno": "418"
+        },
+        {
+            "station": "수유(강북구청)",
+            "stno": "414"
+        },
+        {
+            "station": "숙대입구",
+            "stno": "427"
+        },
+        {
+            "station": "신용산",
+            "stno": "429"
+        },
+        {
+            "station": "쌍문",
+            "stno": "413"
+        },
+        {
+            "station": "이촌",
+            "stno": "430"
+        },
+        {
+            "station": "창동",
+            "stno": "412"
+        },
+        {
+            "station": "총신대입구",
+            "stno": "432"
+        },
+        {
+            "station": "충무로",
+            "stno": "423"
+        },
+        {
+            "station": "한성대입구",
+            "stno": "419"
+        },
+        {
+            "station": "혜화",
+            "stno": "420"
+        },
+        {
+            "station": "회현",
+            "stno": "425"
+        }
+    ],
+    "5호선": [
+        {
+            "station": "강동",
+            "stno": "2549"
+        },
+        {
+            "station": "개롱",
+            "stno": "2559"
+        },
+        {
+            "station": "개화산",
+            "stno": "2512"
+        },
+        {
+            "station": "거여",
+            "stno": "2560"
+        },
+        {
+            "station": "고덕",
+            "stno": "2553"
+        },
+        {
+            "station": "공덕",
+            "stno": "2530"
+        },
+        {
+            "station": "광나루(장신대)",
+            "stno": "2547"
+        },
+        {
+            "station": "광화문(세종문화회관)",
+            "stno": "2534"
+        },
+        {
+            "station": "군자(능동)",
+            "stno": "2545"
+        },
+        {
+            "station": "굽은다리(강동구민회관)",
+            "stno": "2551"
+        },
+        {
+            "station": "길동",
+            "stno": "2550"
+        },
+        {
+            "station": "김포공항",
+            "stno": "2513"
+        },
+        {
+            "station": "까치산",
+            "stno": "2519"
+        },
+        {
+            "station": "답십리",
+            "stno": "2543"
+        },
+        {
+            "station": "동대문역사문화공원",
+            "stno": "2537"
+        },
+        {
+            "station": "둔촌동",
+            "stno": "2555"
+        },
+        {
+            "station": "마곡",
+            "stno": "2515"
+        },
+        {
+            "station": "마장",
+            "stno": "2542"
+        },
+        {
+            "station": "마천",
+            "stno": "2561"
+        },
+        {
+            "station": "마포",
+            "stno": "2529"
+        },
+        {
+            "station": "명일",
+            "stno": "2552"
+        },
+        {
+            "station": "목동",
+            "stno": "2521"
+        },
+        {
+            "station": "미사",
+            "stno": "2563"
+        },
+        {
+            "station": "발산",
+            "stno": "2516"
+        },
+        {
+            "station": "방이",
+            "stno": "2557"
+        },
+        {
+            "station": "방화",
+            "stno": "2511"
+        },
+        {
+            "station": "상일동",
+            "stno": "2554"
+        },
+        {
+            "station": "서대문",
+            "stno": "2533"
+        },
+        {
+            "station": "송정",
+            "stno": "2514"
+        },
+        {
+            "station": "신금호",
+            "stno": "2539"
+        },
+        {
+            "station": "신길",
+            "stno": "2526"
+        },
+        {
+            "station": "신정(은행정)",
+            "stno": "2520"
+        },
+        {
+            "station": "아차산(어린이대공원)",
+            "stno": "2546"
+        },
+        {
+            "station": "애오개",
+            "stno": "2531"
+        },
+        {
+            "station": "양평",
+            "stno": "2523"
+        },
+        {
+            "station": "여의나루",
+            "stno": "2528"
+        },
+        {
+            "station": "여의도",
+            "stno": "2527"
+        },
+        {
+            "station": "영등포구청",
+            "stno": "2524"
+        },
+        {
+            "station": "영등포시장",
+            "stno": "2525"
+        },
+        {
+            "station": "오금",
+            "stno": "2558"
+        },
+        {
+            "station": "오목교(목동운동장앞)",
+            "stno": "2522"
+        },
+        {
+            "station": "올림픽공원(한국체대)",
+            "stno": "2556"
+        },
+        {
+            "station": "왕십리",
+            "stno": "2541"
+        },
+        {
+            "station": "우장산",
+            "stno": "2517"
+        },
+        {
+            "station": "을지로4가",
+            "stno": "2536"
+        },
+        {
+            "station": "장한평",
+            "stno": "2544"
+        },
+        {
+            "station": "종로3가(탑골공원)",
+            "stno": "2535"
+        },
+        {
+            "station": "천호(풍납토성)",
+            "stno": "2548"
+        },
+        {
+            "station": "충정로(경기대입구)",
+            "stno": "2532"
+        },
+        {
+            "station": "하남풍산",
+            "stno": "2564"
+        },
+        {
+            "station": "행당",
+            "stno": "2540"
+        },
+        {
+            "station": "화곡",
+            "stno": "2518"
+        }
+    ],
+    "6호선": [
+        {
+            "station": "고려대",
+            "stno": "2641"
+        },
+        {
+            "station": "공덕",
+            "stno": "2627"
+        },
+        {
+            "station": "광흥창(서강)",
+            "stno": "2625"
+        },
+        {
+            "station": "구산",
+            "stno": "2616"
+        },
+        {
+            "station": "녹사평",
+            "stno": "2630"
+        },
+        {
+            "station": "대흥",
+            "stno": "2626"
+        },
+        {
+            "station": "독바위",
+            "stno": "2614"
+        },
+        {
+            "station": "돌곶이",
+            "stno": "2644"
+        },
+        {
+            "station": "동묘앞",
+            "stno": "2637"
+        },
+        {
+            "station": "디지털미디어시티",
+            "stno": "2619"
+        },
+        {
+            "station": "마포구청",
+            "stno": "2621"
+        },
+        {
+            "station": "망원",
+            "stno": "2622"
+        },
+        {
+            "station": "버티고개",
+            "stno": "2633"
+        },
+        {
+            "station": "보문",
+            "stno": "2639"
+        },
+        {
+            "station": "봉화산",
+            "stno": "2648"
+        },
+        {
+            "station": "불광",
+            "stno": "2613"
+        },
+        {
+            "station": "삼각지",
+            "stno": "2629"
+        },
+        {
+            "station": "상수",
+            "stno": "2624"
+        },
+        {
+            "station": "상월곡(한국과학기술연구원)",
+            "stno": "2643"
+        },
+        {
+            "station": "새절",
+            "stno": "2617"
+        },
+        {
+            "station": "석계",
+            "stno": "2645"
+        },
+        {
+            "station": "신내",
+            "stno": "2649"
+        },
+        {
+            "station": "신당",
+            "stno": "2636"
+        },
+        {
+            "station": "안암",
+            "stno": "2640"
+        },
+        {
+            "station": "약수",
+            "stno": "2634"
+        },
+        {
+            "station": "역촌",
+            "stno": "2612"
+        },
+        {
+            "station": "연신내",
+            "stno": "2615"
+        },
+        {
+            "station": "월곡",
+            "stno": "2642"
+        },
+        {
+            "station": "월드컵경기장(성산)",
+            "stno": "2620"
+        },
+        {
+            "station": "응암",
+            "stno": "2611"
+        },
+        {
+            "station": "이태원",
+            "stno": "2631"
+        },
+        {
+            "station": "증산",
+            "stno": "2618"
+        },
+        {
+            "station": "창신",
+            "stno": "2638"
+        },
+        {
+            "station": "청구",
+            "stno": "2635"
+        },
+        {
+            "station": "태릉입구",
+            "stno": "2646"
+        },
+        {
+            "station": "한강진",
+            "stno": "2632"
+        },
+        {
+            "station": "합정",
+            "stno": "2623"
+        },
+        {
+            "station": "화랑대(서울여대입구)",
+            "stno": "2647"
+        },
+        {
+            "station": "효창공원앞",
+            "stno": "2628"
+        }
+    ],
+    "7호선": [
+        {
+            "station": "가산디지털단지",
+            "stno": "2748"
+        },
+        {
+            "station": "강남구청",
+            "stno": "2732"
+        },
+        {
+            "station": "건대입구",
+            "stno": "2729"
+        },
+        {
+            "station": "고속터미널",
+            "stno": "2736"
+        },
+        {
+            "station": "공릉(서울산업대입구)",
+            "stno": "2718"
+        },
+        {
+            "station": "광명사거리",
+            "stno": "2750"
+        },
+        {
+            "station": "군자(능동)",
+            "stno": "2727"
+        },
+        {
+            "station": "굴포천",
+            "stno": "2760"
+        },
+        {
+            "station": "까치울",
+            "stno": "2753"
+        },
+        {
+            "station": "남구로",
+            "stno": "2747"
+        },
+        {
+            "station": "남성",
+            "stno": "2739"
+        },
+        {
+            "station": "내방",
+            "stno": "2737"
+        },
+        {
+            "station": "노원",
+            "stno": "2715"
+        },
+        {
+            "station": "논현",
+            "stno": "2734"
+        },
+        {
+            "station": "대림(구로구청)",
+            "stno": "2746"
+        },
+        {
+            "station": "도봉산",
+            "stno": "2712"
+        },
+        {
+            "station": "뚝섬유원지",
+            "stno": "2730"
+        },
+        {
+            "station": "마들",
+            "stno": "2714"
+        },
+        {
+            "station": "먹골",
+            "stno": "2720"
+        },
+        {
+            "station": "면목",
+            "stno": "2723"
+        },
+        {
+            "station": "반포",
+            "stno": "2735"
+        },
+        {
+            "station": "보라매",
+            "stno": "2744"
+        },
+        {
+            "station": "부천시청",
+            "stno": "2757"
+        },
+        {
+            "station": "부천종합운동장",
+            "stno": "2754"
+        },
+        {
+            "station": "부평구청",
+            "stno": "2761"
+        },
+        {
+            "station": "사가정",
+            "stno": "2724"
+        },
+        {
+            "station": "삼산체육관",
+            "stno": "2759"
+        },
+        {
+            "station": "상도(중앙대앞)",
+            "stno": "2741"
+        },
+        {
+            "station": "상동",
+            "stno": "2758"
+        },
+        {
+            "station": "상봉(시외버스터미널)",
+            "stno": "2722"
+        },
+        {
+            "station": "수락산",
+            "stno": "2713"
+        },
+        {
+            "station": "숭실대입구(살피재)",
+            "stno": "2740"
+        },
+        {
+            "station": "신대방삼거리",
+            "stno": "2743"
+        },
+        {
+            "station": "신중동",
+            "stno": "2756"
+        },
+        {
+            "station": "신풍",
+            "stno": "2745"
+        },
+        {
+            "station": "어린이대공원(세종대)",
+            "stno": "2728"
+        },
+        {
+            "station": "온수",
+            "stno": "2752"
+        },
+        {
+            "station": "용마산",
+            "stno": "2725"
+        },
+        {
+            "station": "이수(총신대입구)",
+            "stno": "2738"
+        },
+        {
+            "station": "장승배기",
+            "stno": "2742"
+        },
+        {
+            "station": "장암",
+            "stno": "2711"
+        },
+        {
+            "station": "중계",
+            "stno": "2716"
+        },
+        {
+            "station": "중곡",
+            "stno": "2726"
+        },
+        {
+            "station": "중화",
+            "stno": "2721"
+        },
+        {
+            "station": "천왕",
+            "stno": "2751"
+        },
+        {
+            "station": "철산",
+            "stno": "2749"
+        },
+        {
+            "station": "청담",
+            "stno": "2731"
+        },
+        {
+            "station": "춘의",
+            "stno": "2755"
+        },
+        {
+            "station": "태릉입구",
+            "stno": "2719"
+        },
+        {
+            "station": "하계",
+            "stno": "2717"
+        },
+        {
+            "station": "학동",
+            "stno": "2733"
+        }
+    ],
+    "8호선": [
+        {
+            "station": "가락시장",
+            "stno": "2818"
+        },
+        {
+            "station": "강동구청",
+            "stno": "2813"
+        },
+        {
+            "station": "남한산성입구(법원,검찰청)",
+            "stno": "2823"
+        },
+        {
+            "station": "단대오거리",
+            "stno": "2824"
+        },
+        {
+            "station": "모란",
+            "stno": "2827"
+        },
+        {
+            "station": "몽촌토성(평화의문)",
+            "stno": "2814"
+        },
+        {
+            "station": "문정",
+            "stno": "2819"
+        },
+        {
+            "station": "복정",
+            "stno": "2821"
+        },
+        {
+            "station": "산성",
+            "stno": "2822"
+        },
+        {
+            "station": "석촌",
+            "stno": "2816"
+        },
+        {
+            "station": "송파",
+            "stno": "2817"
+        },
+        {
+            "station": "수진",
+            "stno": "2826"
+        },
+        {
+            "station": "신흥",
+            "stno": "2825"
+        },
+        {
+            "station": "암사",
+            "stno": "2811"
+        },
+        {
+            "station": "잠실",
+            "stno": "2815"
+        },
+        {
+            "station": "장지",
+            "stno": "2820"
+        },
+        {
+            "station": "천호(풍납토성)",
+            "stno": "2812"
+        }
+    ]
+}
