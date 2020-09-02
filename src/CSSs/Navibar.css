@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "BMJ";
+    src: url('../Fonts/BMJUA_ttf.7dbe95a7.ttf');
+}
+
+.Navibar { 
+    width: 100%;
+    height: 50px;
+    background-color: rgb(51, 50, 50);
+    font-size: 25px;
+    text-align: center;
+    font-family: BMJ;
+    line-height: 50px;
+    vertical-align: middle;
+    color: white;
+}

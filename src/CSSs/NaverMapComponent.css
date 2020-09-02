@@ -1,0 +1,32 @@
+.position_box{
+    position: fixed;
+    top: 55px; /* navibar 가 50px이므로 그것보다 살짝더 크게한것  */
+    left: 5px;
+    z-index: 2;
+}
+
+.MyPositionBtn{
+    width: 40px;
+    height: 40px;
+    outline: 0;
+    background-color: white;
+    background-image: url('../Images/curpoint.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.MyPositionBtn:hover{
+    cursor: pointer;
+}
+
+@keyframes Rotate {
+    from {
+        margin-left: 0ch;
+    }
+    to{
+        margin-left: 100px;
+    }
+}
+.MyIcon {
+    animation: Rotate 1s infinite;
+}

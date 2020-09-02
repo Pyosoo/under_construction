@@ -8,6 +8,7 @@ import NaverMapComponent from './Components/NaverMapComponent.js';
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
 import store from './store';
+import Navibar from './Components/Navaibar';
 
 /*
 const express = require('express');
@@ -15,26 +16,27 @@ var cors = require('cors')
 const app = express();
 */
 
-function MakeMarkers() {
-  // JSON파일로 공사중인 지하철 역의 좌표와 Description을 저장해놓고 map을 통해 Marker list
-
-
-}
 
 
 function App(props) {
 
   console.log("App render");
-  console.log(props.fromStore);
-
+/*
+  useEffect(()=>{
+    fetch('http://localhost:3001/api')
+      .then(res=>res.json())
+      .then(data=> console.log(data))
+  },[])
+*/
   return (
     <div>
+      <Navibar />
       <RenderAfterNavermapsLoaded
         ncpClientId={'ce25x52vaf'} // 자신의 네이버 계정에서 발급받은 Client ID
         error={<p>Maps Load Error</p>}
         loading={<p>Maps Loading...</p>}
       >
-       <NaverMapComponent goX={props.fromStore.currentX} goY={props.fromStore.currentY}/>
+       <NaverMapComponent />
       </RenderAfterNavermapsLoaded>
     </div>
 
@@ -73,7 +75,7 @@ function App(props) {
 
 // Redux state로부터 home에 prop으로써 전달한다는 뜻.
 function mapStateToProps(state, ownProps){
-  return { fromStore : state };   //toDos에 state를 가져온다.
+  return { storeData : state };   //toDos에 state를 가져온다.
 }
 
 // reducer에 action을 알리는 함수 

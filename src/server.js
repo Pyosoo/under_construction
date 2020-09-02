@@ -1,3 +1,4 @@
+/*
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -6,48 +7,44 @@ const port =process.env.PORT || 3001;
 
 let stationInfo = require('./Data/station-info.json');
 
-let line = ['1호선', '2호선', '3호선', '4호선', '5호선', '6호선', '7호선', '8호선'];
-let line_length = [10, 50, 33, 26, 52, 39, 51, 7, ] 
-let line_stno = [
-    150, 151, 152, 153, 154, 155, 156, 157, 158, 159
-]
-
 let fromWep = []; //크롤링해 온것 담아놀것
 
 const axios = require('axios');
 const cheerio = require('cheerio');
-for(let key in stationInfo){
-    console.log(`${key} 라인`);
-    async function getHTML() {
-        try {
-            return await axios.get("http://www.seoulmetro.co.kr/kr/equipmentList.do?menuIdx=367", {params: {'line':key ,'stno':stationInfo[key].stno}})
-        } catch (error) {
-            console.error(error);
+let count = 0;
+
+let result_list = [];
+
+
+    
+        async function getHTML() {
+            try {
+                return await axios.get("http://underproject.pythonanywhere.com/api/")
+            } catch (error) {
+                console.error(error);
+            }
         }
-    }
-    
-    getHTML()
-        .then(html => {
-            let result_list = []
-            const $ = cheerio.load(html.data);
-            const tr_list = $("#contents div table tbody").children('tr')
-    
-            tr_list.each(function(i, elem){
-                let td_list = Array.from($(this).children('td')).map(function(value){
-                    return value.children[0].data.trim()
+        
+        getHTML()
+            .then(html => {
+                const $ = cheerio.load(html.data);
+        
+                tr_list.each(function(i, elem){
+                    let td_list = Array.from($(this).children('prettyprint')).map(function(value){
+                        return value.children[0].data.trim()
+                    })
+                    result_list[i] = {
+                        stno: stno,
+                        facility: td_list[0],
+                        operating_section: td_list[1],
+                        location: td_list[2],
+                        usage_status: td_list[3]
+                    }
                 })
-                result_list[i] = {
-                    facility: td_list[0],
-                    operating_section: td_list[1],
-                    location: td_list[2],
-                    usage_status: td_list[3]
-                }
+                fromWep = [...fromWep, result_list];
+                return result_list
             })
-            fromWep = [...fromWep, result_list];
-            return result_list
-        })
-        .then(res => console.log(res));
-}
+            .then(res => console.log(res));
 
 
 
@@ -59,3 +56,6 @@ for(let key in stationInfo){
     app.listen(port, ()=>{
         console.log(`express is running on ${port}`);
     })
+
+
+*/

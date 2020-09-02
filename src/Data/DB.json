@@ -1,14 +1,626 @@
 [
-    {   
-        "name" : "구산",
-        "x": 37.611377,
-        "y": 126.91727,
-        "desc" : "B4 to B1 에스컬레이터 및 휠체어 리프트 점검 중"
+    {
+        "id": 4,
+        "line": "1호선",
+        "name": "시청",
+        "stno": "151",
+        "elevating_equipment": [
+            {
+                "id": 34,
+                "facility": "에스컬레이터1호기",
+                "operation_section": "지상(시청광장)~B1(대합실)",
+                "location": "5번출구",
+                "status": "보수중",
+                "station_id": 4
+            }
+        ]
     },
     {
-        "name" : "디지털미디어시티",
-        "x": 37.576646,
-        "y": 126.900984,
-        "desc" : "B1 to F1 3번출구 에스컬레이터 점검 중"
+        "id": 22,
+        "line": "2호선",
+        "name": "뚝섬",
+        "stno": "210",
+        "elevating_equipment": [
+            {
+                "id": 143,
+                "facility": "에스컬레이터3호기",
+                "operation_section": "지상~F2(대합실)",
+                "location": "8번출구",
+                "status": "점검중",
+                "station_id": 22
+            },
+            {
+                "id": 144,
+                "facility": "에스컬레이터4호기",
+                "operation_section": "F2(대합실)~지상",
+                "location": "8번출구",
+                "status": "점검중",
+                "station_id": 22
+            },
+            {
+                "id": 147,
+                "facility": "에스컬레이터7호기",
+                "operation_section": "F2(대합실)~지상",
+                "location": "3번출구",
+                "status": "점검중",
+                "station_id": 22
+            },
+            {
+                "id": 148,
+                "facility": "에스컬레이터8호기",
+                "operation_section": "F2(대합실)~지상",
+                "location": "3번출구",
+                "status": "점검중",
+                "station_id": 22
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "line": "2호선",
+        "name": "삼성",
+        "stno": "219",
+        "elevating_equipment": [
+            {
+                "id": 189,
+                "facility": "에스컬레이터1호기",
+                "operation_section": "지상~B1(대합실)",
+                "location": "3번출구",
+                "status": "보수중",
+                "station_id": 27
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "line": "2호선",
+        "name": "서초",
+        "stno": "224",
+        "elevating_equipment": [
+            {
+                "id": 228,
+                "facility": "에스컬레이터7호기",
+                "operation_section": "지상~B1(대합실)",
+                "location": "3,4번출구",
+                "status": "보수중",
+                "station_id": 30
+            }
+        ]
+    },
+    {
+        "id": 39,
+        "line": "2호선",
+        "name": "신설동",
+        "stno": "246",
+        "elevating_equipment": [
+            {
+                "id": 302,
+                "facility": "엘리베이터내부1호기",
+                "operation_section": "B2(승강장)~B1(대합실)",
+                "location": "외선승강장종점4-3",
+                "status": "공사중",
+                "station_id": 39
+            }
+        ]
+    },
+    {
+        "id": 48,
+        "line": "2호선",
+        "name": "용두",
+        "stno": "250",
+        "elevating_equipment": [
+            {
+                "id": 374,
+                "facility": "에스컬레이터11호기",
+                "operation_section": "B2(대합실)~지상",
+                "location": "5번출구",
+                "status": "점검중",
+                "station_id": 48
+            },
+            {
+                "id": 375,
+                "facility": "에스컬레이터12호기",
+                "operation_section": "지상~B2(대합실)",
+                "location": "5번출구",
+                "status": "점검중",
+                "station_id": 48
+            }
+        ]
+    },
+    {
+        "id": 64,
+        "line": "3호선",
+        "name": "고속터미널",
+        "stno": "329",
+        "elevating_equipment": [
+            {
+                "id": 549,
+                "facility": "에스컬레이터14호기",
+                "operation_section": "B3(승강장)~B2(대합실)",
+                "location": "교대방향7-2",
+                "status": "보수중",
+                "station_id": 64
+            }
+        ]
+    },
+    {
+        "id": 70,
+        "line": "3호선",
+        "name": "대청",
+        "stno": "337",
+        "elevating_equipment": [
+            {
+                "id": 604,
+                "facility": "엘리베이터내부1호기",
+                "operation_section": "B3(승강장)~B2(대합실)",
+                "location": "상선#4-4",
+                "status": "보수중",
+                "station_id": 70
+            },
+            {
+                "id": 606,
+                "facility": "엘리베이터외부1호기",
+                "operation_section": "B2(대합실)~지상",
+                "location": "7,8번출구",
+                "status": "보수중",
+                "station_id": 70
+            }
+        ]
+    },
+    {
+        "id": 80,
+        "line": "3호선",
+        "name": "안국",
+        "stno": "318",
+        "elevating_equipment": [
+            {
+                "id": 680,
+                "facility": "에스컬레이터10호기",
+                "operation_section": "B1(대합실)~지상",
+                "location": "5번출구",
+                "status": "점검중",
+                "station_id": 80
+            },
+            {
+                "id": 689,
+                "facility": "에스컬레이터9호기",
+                "operation_section": "지상~B1(대합실)",
+                "location": "5번출구",
+                "status": "점검중",
+                "station_id": 80
+            }
+        ]
+    },
+    {
+        "id": 81,
+        "line": "3호선",
+        "name": "압구정",
+        "stno": "326",
+        "elevating_equipment": [
+            {
+                "id": 701,
+                "facility": "엘리베이터내부2호기",
+                "operation_section": "B2(승강장)~B1(대합실)",
+                "location": "하행3-2",
+                "status": "공사중",
+                "station_id": 81
+            }
+        ]
+    },
+    {
+        "id": 83,
+        "line": "3호선",
+        "name": "양재",
+        "stno": "332",
+        "elevating_equipment": [
+            {
+                "id": 710,
+                "facility": "에스컬레이터1호기",
+                "operation_section": "지상~B1(대합실)",
+                "location": "5번출구",
+                "status": "보수중",
+                "station_id": 83
+            }
+        ]
+    },
+    {
+        "id": 85,
+        "line": "3호선",
+        "name": "오금",
+        "stno": "342",
+        "elevating_equipment": [
+            {
+                "id": 730,
+                "facility": "에스컬레이터12호기",
+                "operation_section": "B2(대합실)~B1(대합실)",
+                "location": "환승상행",
+                "status": "점검중",
+                "station_id": 85
+            },
+            {
+                "id": 733,
+                "facility": "에스컬레이터15호기",
+                "operation_section": "B1(대합실)~셔터(2-1)",
+                "location": "2번출구",
+                "status": "점검중",
+                "station_id": 85
+            }
+        ]
+    },
+    {
+        "id": 90,
+        "line": "3호선",
+        "name": "종로3가",
+        "stno": "319",
+        "elevating_equipment": [
+            {
+                "id": 774,
+                "facility": "에스컬레이터4호기",
+                "operation_section": "B3~B1(3,6,7,8출구방향)",
+                "location": "3,5연결통로상행",
+                "status": "점검중",
+                "station_id": 90
+            }
+        ]
+    },
+    {
+        "id": 101,
+        "line": "4호선",
+        "name": "명동",
+        "stno": "424",
+        "elevating_equipment": [
+            {
+                "id": 838,
+                "facility": "에스컬레이터1호기",
+                "operation_section": "B2(대합실)~A계단(승강장)",
+                "location": "A계단옆",
+                "status": "공사중",
+                "station_id": 101
+            }
+        ]
+    },
+    {
+        "id": 105,
+        "line": "4호선",
+        "name": "삼각지",
+        "stno": "428",
+        "elevating_equipment": [
+            {
+                "id": 876,
+                "facility": "엘리베이터외부1호기",
+                "operation_section": "B1(대합실)~지상",
+                "location": "1,2번출구",
+                "status": "점검중",
+                "station_id": 105
+            },
+            {
+                "id": 877,
+                "facility": "엘리베이터외부2호기",
+                "operation_section": "B1(대합실)~지상",
+                "location": "5,6번출구",
+                "status": "점검중",
+                "station_id": 105
+            },
+            {
+                "id": 878,
+                "facility": "엘리베이터외부3호기",
+                "operation_section": "B1(대합실)~지상",
+                "location": "3번출구",
+                "status": "점검중",
+                "station_id": 105
+            }
+        ]
+    },
+    {
+        "id": 111,
+        "line": "4호선",
+        "name": "신용산",
+        "stno": "429",
+        "elevating_equipment": [
+            {
+                "id": 915,
+                "facility": "엘리베이터내부1호기",
+                "operation_section": "B1(승강장)~B2(대합실)",
+                "location": "상행8-2",
+                "status": "점검중",
+                "station_id": 111
+            },
+            {
+                "id": 916,
+                "facility": "엘리베이터내부2호기",
+                "operation_section": "B1(승강장)~B2(대합실)",
+                "location": "하행3-2",
+                "status": "점검중",
+                "station_id": 111
+            },
+            {
+                "id": 917,
+                "facility": "엘리베이터외부1호기",
+                "operation_section": "B2~지상",
+                "location": "1번출구",
+                "status": "점검중",
+                "station_id": 111
+            }
+        ]
+    },
+    {
+        "id": 112,
+        "line": "4호선",
+        "name": "쌍문",
+        "stno": "413",
+        "elevating_equipment": [
+            {
+                "id": 921,
+                "facility": "에스컬레이터2호기",
+                "operation_section": "B1(대합실)~지상",
+                "location": "4번출구",
+                "status": "점검중",
+                "station_id": 112
+            },
+            {
+                "id": 922,
+                "facility": "에스컬레이터3호기",
+                "operation_section": "B1(대합실)~지상",
+                "location": "2번출구",
+                "status": "점검중",
+                "station_id": 112
+            },
+            {
+                "id": 923,
+                "facility": "에스컬레이터4호기",
+                "operation_section": "B1(대합실)~지상",
+                "location": "2번출구",
+                "status": "점검중",
+                "station_id": 112
+            },
+            {
+                "id": 924,
+                "facility": "엘리베이터내부1호기",
+                "operation_section": "B2(승강장)~B1(대합실)",
+                "location": "상행8-4",
+                "status": "점검중",
+                "station_id": 112
+            },
+            {
+                "id": 925,
+                "facility": "엘리베이터내부2호기",
+                "operation_section": "B2(승강장)~B1(대합실)",
+                "location": "하행3-1",
+                "status": "점검중",
+                "station_id": 112
+            },
+            {
+                "id": 926,
+                "facility": "엘리베이터외부1호기",
+                "operation_section": "B1(대합실)~지상",
+                "location": "1번출구",
+                "status": "점검중",
+                "station_id": 112
+            }
+        ]
+    },
+    {
+        "id": 116,
+        "line": "4호선",
+        "name": "충무로",
+        "stno": "423",
+        "elevating_equipment": [
+            {
+                "id": 981,
+                "facility": "에스컬레이터7호기",
+                "operation_section": "B2(대합실)~B3(승강장)",
+                "location": "하행7-2",
+                "status": "공사중",
+                "station_id": 116
+            },
+            {
+                "id": 982,
+                "facility": "에스컬레이터8호기",
+                "operation_section": "B3(승강장)~B2(대합실)",
+                "location": "하행7-2",
+                "status": "공사중",
+                "station_id": 116
+            }
+        ]
+    },
+    {
+        "id": 118,
+        "line": "4호선",
+        "name": "혜화",
+        "stno": "420",
+        "elevating_equipment": [
+            {
+                "id": 1002,
+                "facility": "엘리베이터외부2호기",
+                "operation_section": "B1(대합실)~지상",
+                "location": "3번출구측",
+                "status": "점검중",
+                "station_id": 118
+            }
+        ]
+    },
+    {
+        "id": 120,
+        "line": "5호선",
+        "name": "강동",
+        "stno": "2549",
+        "elevating_equipment": [
+            {
+                "id": 1033,
+                "facility": "휠체어리프트2호기",
+                "operation_section": "대합실",
+                "location": "지하대합실",
+                "status": "공사중",
+                "station_id": 120
+            }
+        ]
+    },
+    {
+        "id": 150,
+        "line": "5호선",
+        "name": "신길",
+        "stno": "2526",
+        "elevating_equipment": [
+            {
+                "id": 1325,
+                "facility": "휠체어리프트1호기",
+                "operation_section": "상선승환통로",
+                "location": "지하상선승환통로",
+                "status": "공사중",
+                "station_id": 150
+            },
+            {
+                "id": 1326,
+                "facility": "휠체어리프트3호기",
+                "operation_section": "환승통로",
+                "location": "지하환승통로",
+                "status": "공사중",
+                "station_id": 150
+            }
+        ]
+    },
+    {
+        "id": 175,
+        "line": "6호선",
+        "name": "구산",
+        "stno": "2616",
+        "elevating_equipment": [
+            {
+                "id": 1628,
+                "facility": "에스컬레이터1호기",
+                "operation_section": "B1-B4",
+                "location": "지하B1-B4",
+                "status": "공사중",
+                "station_id": 175
+            },
+            {
+                "id": 1630,
+                "facility": "휠체어리프트1호기",
+                "operation_section": "지하1층",
+                "location": "지하지하1층",
+                "status": "공사중",
+                "station_id": 175
+            }
+        ]
+    },
+    {
+        "id": 181,
+        "line": "6호선",
+        "name": "디지털미디어시티",
+        "stno": "2619",
+        "elevating_equipment": [
+            {
+                "id": 1699,
+                "facility": "에스컬레이터7호기",
+                "operation_section": "F1-B1",
+                "location": "3번출구",
+                "status": "보수중",
+                "station_id": 181
+            }
+        ]
+    },
+    {
+        "id": 214,
+        "line": "7호선",
+        "name": "고속터미널",
+        "stno": "2736",
+        "elevating_equipment": [
+            {
+                "id": 2127,
+                "facility": "에스컬레이터3호기",
+                "operation_section": "B2-B3",
+                "location": "지하B2-B3",
+                "status": "보수중",
+                "station_id": 214
+            }
+        ]
+    },
+    {
+        "id": 222,
+        "line": "7호선",
+        "name": "내방",
+        "stno": "2737",
+        "elevating_equipment": [
+            {
+                "id": 2231,
+                "facility": "에스컬레이터3호기",
+                "operation_section": "F1-B1",
+                "location": "4번출구",
+                "status": "보수중",
+                "station_id": 222
+            }
+        ]
+    },
+    {
+        "id": 247,
+        "line": "7호선",
+        "name": "온수",
+        "stno": "2752",
+        "elevating_equipment": [
+            {
+                "id": 2584,
+                "facility": "에스컬레이터9호기",
+                "operation_section": "F1-B1",
+                "location": "2번출구",
+                "status": "보수중",
+                "station_id": 247
+            }
+        ]
+    },
+    {
+        "id": 259,
+        "line": "7호선",
+        "name": "태릉입구",
+        "stno": "2719",
+        "elevating_equipment": [
+            {
+                "id": 2735,
+                "facility": "에스컬레이터5호기",
+                "operation_section": "B1~B3",
+                "location": "지하B1~B3",
+                "status": "공사중",
+                "station_id": 259
+            },
+            {
+                "id": 2736,
+                "facility": "에스컬레이터6호기",
+                "operation_section": "B1~B3",
+                "location": "지하B1~B3",
+                "status": "공사중",
+                "station_id": 259
+            }
+        ]
+    },
+    {
+        "id": 261,
+        "line": "7호선",
+        "name": "학동",
+        "stno": "2733",
+        "elevating_equipment": [
+            {
+                "id": 2749,
+                "facility": "에스컬레이터10호기",
+                "operation_section": "B2-B1(DOWN)",
+                "location": "지하B2-B1(DOWN)",
+                "status": "보수중",
+                "station_id": 261
+            }
+        ]
+    },
+    {
+        "id": 276,
+        "line": "8호선",
+        "name": "잠실",
+        "stno": "2815",
+        "elevating_equipment": [
+            {
+                "id": 2867,
+                "facility": "에스컬레이터1호기",
+                "operation_section": "M1-B1",
+                "location": "지하M1-B1",
+                "status": "보수중",
+                "station_id": 276
+            }
+        ]
     }
 ]

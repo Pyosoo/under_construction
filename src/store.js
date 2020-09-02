@@ -17,21 +17,19 @@ import { createStore } from "redux";
 const UPDATE = "UPDATE";
 
 //2. action 객체를 생성해 놓는다.
-const updateState = (x, y) => {
+const updateState = fromAPI => {
     return{
         type: UPDATE,
-        x,
-        y
+        fromAPI
     }
 }
 
 //3. reducer를 생성한다. state와 action을 입력 받고 바뀐 결과 state를 return 한다.
-const reducer = (state = {currentX: 37.611377, currentY: 126.91727}, action) =>{
+const reducer = (state = {fromAPI : []}, action) =>{
     switch(action.type){
         case UPDATE:
             return {
-                currentX : action.x,
-                currentY : action.y,
+                fromAPI : action.fromAPI
             };
         default:
             return state;
