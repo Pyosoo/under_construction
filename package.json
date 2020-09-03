@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "antd": "^4.6.2",
     "axios": "^0.20.0",
     "cheerio": "^1.0.0-rc.3",
     "cors": "^2.8.5",
@@ -16,7 +17,8 @@
     "react-naver-maps": "0.0.13",
     "react-redux": "^7.2.1",
     "react-scripts": "3.4.3",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "sweetalert": "^2.1.2"
   },
   "scripts": {
     "start": "npm-run-all --parallel start:**",

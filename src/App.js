@@ -21,13 +21,6 @@ const app = express();
 function App(props) {
 
   console.log("App render");
-/*
-  useEffect(()=>{
-    fetch('http://localhost:3001/api')
-      .then(res=>res.json())
-      .then(data=> console.log(data))
-  },[])
-*/
   return (
     <div>
       <Navibar />
@@ -39,7 +32,6 @@ function App(props) {
        <NaverMapComponent />
       </RenderAfterNavermapsLoaded>
     </div>
-
   );
 }
 

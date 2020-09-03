@@ -1,17 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { UserOutlined } from '@ant-design/icons';
 import { RenderAfterNavermapsLoaded, NaverMap, Marker } from 'react-naver-maps'; // 패키지 불러오기
+import { connect } from 'react-redux';
+import { actionCreators } from '../store';
+import axios from 'axios';
+import { Modal, Button } from 'antd';
+import swal from 'sweetalert';
+
+// Image import
 import DB from '../Data/DB.json'
 import walk from '../Images/walk.png';
 import pin from '../Images/pin.png';
 import curpoint from '../Images/curpoint.jpg';
-import { connect } from 'react-redux';
-import { actionCreators } from '../store';
+
+// Component import
+import 'antd/dist/antd.css';
 import store from '../store';
 import Subway from '../Data/Subway.json';
 import Navibar from './Navaibar';
-import axios from 'axios';
 import '../CSSs/NaverMapComponent.css';
+import Sidebox from './Sidebox';
+
+
 
 // =====================================================================================================현재위치 받아오기 위한 함수
 let Currentx=37.497175, Currenty=127.027926;        //초기 위치는 강남역으로
@@ -40,7 +50,7 @@ function getLocation() {
 
 
 
-//====================================================================================================== 네이버지도 불러오는 함수
+//========================================== 네이버지도 불러오는 함수 ============================================================
 let navermaps;
 let MarkerIndex = 0;  //마커의 key에 쓰일 index
 let list, list2=[];
@@ -56,14 +66,15 @@ class NaverMapComponent extends React.Component {
         this.state = {
             center: { lat: Currentx, lng: Currenty },
             APIdata : [],
-            MyMarkerIndex : 100,
-            Markers : []
+            MyMarkerIndex : 0,
+            Markers : [],
+            visible : true
         }
 
-        this.panToNaver = this.panToNaver.bind(this);
+        this.panToMe = this.panToMe.bind(this);
     }
 
-    panToNaver() {
+    panToMe() {
         let list3 = list2.filter(data=>parseInt(data.key) != this.state.MyMarkerIndex);
         console.log(`현재 나의 위치 ${Currentx} , ${Currenty}`)
         list3.push(     //새로만드는 마커의 key를 주어서 안겹치도록 아무수나 넣도록 하자.
@@ -81,31 +92,33 @@ class NaverMapComponent extends React.Component {
     }
 
 
-
-
     componentWillMount() {
         navermaps = window.naver.maps;
         let Database = DB;
-                                                  
-        // ================================================================ api불러오는 코드
+        // ================================= api불러오는 코드
         const fetchUsers = async() => {
             console.log("fetchUsers 실행");
             try {
               const response = await axios.get(
                 'http://underproject.pythonanywhere.com/api/'
               );
-              // ==========================================================api에서 불러온 json 배열로 Marker를 만들어서 list2에 저장해놓는다.
+              // ====================api에서 불러온 json 배열로 Marker를 만들어서 list2에 저장해놓는다.
               response.data.map(data=>{
                 let station_information = [];
                 data.elevating_equipment.map(data2=>{
-                    station_information.push(`▲${data2.location}에 위치한${data2.facility} ${data2.status} \n`)
+                    station_information.push(`▲ 위치:${data2.location}  시설:${data2.facility}  상태:${data2.status} \n`)
                     })
                     list2.push(
                         <Marker
                             key={data.id}
                             position={new navermaps.LatLng(Subway[data.name][0], Subway[data.name][1])}
                             animation={2}
-                            onClick={()=>alert(station_information)}
+                            onClick={()=>
+                                swal({
+                                    title: `${data.name}역`,
+                                    text : station_information.join('')
+                                    })
+                            }
                         />
                     )
                 });
@@ -119,7 +132,9 @@ class NaverMapComponent extends React.Component {
           };
       
           fetchUsers();
-        //========================================================================현재위치 마커 추가하기                                                
+          this.props.updateState(this.props.storeData.fromAPI,Currentx, Currenty);
+
+        //◆현재위치 마커 추가하기                                                
         list2.push(
             <Marker
                 key={this.state.MyMarkerIndex}
@@ -128,20 +143,41 @@ class NaverMapComponent extends React.Component {
                 icon={walk}
             />
         )
-
-          
-    
     }
+
+    // 맨 처음 공지사항 모달 관련 
+    handleOk = e => {
+        console.log(e);
+        this.setState({
+          visible: false,
+        });
+        this.panToMe();
+      };
+    
 
     render() {
         return (
             <div>
                 <div className="position_box">
-                    <button onClick={this.panToNaver} className="MyPositionBtn"></button>
+                    <button onClick={this.panToMe} className="MyPositionBtn"></button>
                 </div>
-               
+                <Modal
+                    className="start_Modal"
+                    title="Notice"
+                    visible={this.state.visible}
+                    onOk={this.handleOk}
+                    footer={[null,null]}
+                >
+                    <h1>내 주위 승강시설 공사중인 지하철역</h1>
+                    <p>이 사이트는 내 주위에 승강시설 정비중인 지하철에 대한 정보를 제공합니다.<br />
+                     원활한 서비스 이용을 위해 현재 위치를 허용해주어 더 빠르게 서비스를 이용할 수 있도록 해주세요.
+                     <br/>위치 정보 수집 허용 후 확인을 눌러주세요
+                     <button className="button2 btn2" onClick={this.handleOk}>시작하기</button>
+                    </p>
+                </Modal>
+                <Sidebox />
                 <NaverMap
-                    id='maps-getting-started-controlled'
+                    id='Mymap'
                     style={{ width: '100%', height: '90vh' }}
 
                     // uncontrolled zoom
@@ -149,7 +185,7 @@ class NaverMapComponent extends React.Component {
 
                     // controlled center
                     // Not defaultCenter={this.state.center}
-                    center={this.state.center}                              //center변경시 render없이 화면만 따라가는 듯?
+                    center={this.state.center}                              
                     onCenterChanged={center => this.setState({ center })}
                    > 
                     {this.state.Markers}
@@ -170,7 +206,7 @@ function mapStateToProps(state, ownProps) {
 // reducer에 action을 알리는 함수 
 function mapDispatchToProps(dispatch) {
     return {
-        updateState: fromAPI => dispatch(actionCreators.updateState(fromAPI))
+        updateState: (fromAPI,x,y) => dispatch(actionCreators.updateState(fromAPI,x,y))
     };
 }
 
