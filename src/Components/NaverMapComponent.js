@@ -25,12 +25,13 @@ import Sidebox from './Sidebox';
 
 // =====================================================================================================현재위치 받아오기 위한 함수
 let Currentx=37.497175, Currenty=127.027926;        //초기 위치는 강남역으로
+let MyX, MyY;
 function getLocation() {
     console.log("getLocatoin 실행");
     if (navigator.geolocation) { // GPS를 지원하면
         navigator.geolocation.getCurrentPosition(function (position) {
-            Currentx = position.coords.latitude;                               // 사용자의 현재 위치를 받아와서 초기값으로 넣어주기 위함
-            Currenty = position.coords.longitude;
+            MyX = position.coords.latitude;                               // 사용자의 현재 위치를 받아와서 초기값으로 넣어주기 위함
+            MyY = position.coords.longitude;
         }, function (error) {
             console.error(error);
         }, {
@@ -38,7 +39,6 @@ function getLocation() {
             maximumAge: 0,
             timeout: Infinity
         });
-        console.log(`${Currentx} , ${Currenty} 를 얻어옵니다`)
     } else {
         alert('GPS를 지원하지 않습니다');
     }
@@ -66,7 +66,7 @@ class NaverMapComponent extends React.Component {
         this.state = {
             center: { lat: Currentx, lng: Currenty },
             APIdata : [],
-            MyMarkerIndex : 0,
+            MyMarkerIndex : 999,
             Markers : [],
             visible : true,
         }
@@ -79,7 +79,7 @@ class NaverMapComponent extends React.Component {
         list3.push(     //새로만드는 마커의 key를 주어서 안겹치도록 아무수나 넣도록 하자.
                 <Marker
                     key={this.state.MyMarkerIndex+1}
-                    position={new navermaps.LatLng(Currentx, Currenty)}
+                    position={new navermaps.LatLng(MyX, MyY)}
                     animation={1}
                     icon={pin}
                 />)
@@ -87,7 +87,7 @@ class NaverMapComponent extends React.Component {
         list2 = list3;
         this.setState({ Markers : list2 })
         this.setState({ MyMarkerIndex : this.state.MyMarkerIndex+1})
-        this.setState({ center: { lat: Currentx, lng: Currenty } })
+        this.props.updateState(this.props.storeData.fromAPI, MyX, MyY);
     }
 
 
@@ -170,6 +170,12 @@ class NaverMapComponent extends React.Component {
 
 
 
+
+
+
+
+
+
     render() {
         console.log("네이버맵 랜더")
         return (
@@ -195,17 +201,8 @@ class NaverMapComponent extends React.Component {
                 <NaverMap
                     id='Mymap'
                     style={{ width: '100%', height: '90vh' }}
-
-                    // uncontrolled zoom
-                    defaultZoom={13}
-
-                    // controlled center
-                    // Not defaultCenter={this.state.center}
-                    center={this.state.center}                              
-                    onCenterChanged={center => {
-                        this.setState({ center })
-                    }
-                    }
+                    defaultZoom={16}
+                    center={{ lat: this.props.storeData.clikedX, lng: this.props.storeData.clikedY }}
                    > 
                     {this.state.Markers}
                 </NaverMap>
@@ -217,9 +214,11 @@ class NaverMapComponent extends React.Component {
 
 
 
+
+
 // Redux state로부터 home에 prop으로써 전달한다는 뜻.
 function mapStateToProps(state, ownProps) {
-    return { storeData: state };   //toDos에 state를 가져온다.
+    return { storeData: state };   //storeData에 state를 가져온다.
 }
 
 // reducer에 action을 알리는 함수 
