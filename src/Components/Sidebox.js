@@ -9,7 +9,6 @@ import Subway from '../Data/Subway.json';
 
 function Sidebox(props){
     console.log("sidebox render")
-    console.log(props.storeData);
     let list = []; //공사중인 지하철역에 대한 element요소를 담아둘 배열
     props.storeData.fromAPI.map(data=>{
         list.push(
@@ -18,7 +17,7 @@ function Sidebox(props){
                 e.preventDefault();
                 props.updateState(props.storeData.fromAPI, Subway[data.name][0],  Subway[data.name][1]);
             }} className="Sidebox_listitem">
-                <p>{data.name}</p>
+                <p>{data.name}역</p>
             </div>
         )
     })

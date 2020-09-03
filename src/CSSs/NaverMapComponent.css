@@ -35,10 +35,12 @@
     font-size: 17px;
 }
 .ant-modal-content {
-    width: max-content;
+    width: 400px;
     height: max-content;
 }
-
+.swal-modal{
+    width: 520px;
+}
 .button2 {
     display: inline-block;
     width: 200px;

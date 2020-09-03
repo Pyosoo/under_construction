@@ -68,7 +68,7 @@ class NaverMapComponent extends React.Component {
             APIdata : [],
             MyMarkerIndex : 0,
             Markers : [],
-            visible : true
+            visible : true,
         }
 
         this.panToMe = this.panToMe.bind(this);
@@ -76,7 +76,6 @@ class NaverMapComponent extends React.Component {
 
     panToMe() {
         let list3 = list2.filter(data=>parseInt(data.key) != this.state.MyMarkerIndex);
-        console.log(`현재 나의 위치 ${Currentx} , ${Currenty}`)
         list3.push(     //새로만드는 마커의 key를 주어서 안겹치도록 아무수나 넣도록 하자.
                 <Marker
                     key={this.state.MyMarkerIndex+1}
@@ -90,6 +89,21 @@ class NaverMapComponent extends React.Component {
         this.setState({ MyMarkerIndex : this.state.MyMarkerIndex+1})
         this.setState({ center: { lat: Currentx, lng: Currenty } })
     }
+
+
+
+    checkCenter(){
+        // 만약 현재 store에 저장된 x,y가 subway에 저장되어있는 값과 같은게 있다면 
+        // setState center를 통해 이동하면된다.
+        for(let key in Subway){
+            if(Subway[key][0] == this.props.storeData.clikedX){
+                this.props.updateState(this.props.storeData.fromAPI, Currentx, Currenty);
+                this.setState({center : {lat: Subway[key][0], lng: Subway[key][1]}});
+                break;
+            }
+        }
+    }
+
 
 
     componentWillMount() {
@@ -115,6 +129,7 @@ class NaverMapComponent extends React.Component {
                             animation={2}
                             onClick={()=>
                                 swal({
+                                    width: 'max-content',
                                     title: `${data.name}역`,
                                     text : station_information.join('')
                                     })
@@ -147,15 +162,16 @@ class NaverMapComponent extends React.Component {
 
     // 맨 처음 공지사항 모달 관련 
     handleOk = e => {
-        console.log(e);
         this.setState({
           visible: false,
         });
         this.panToMe();
       };
-    
+
+
 
     render() {
+        console.log("네이버맵 랜더")
         return (
             <div>
                 <div className="position_box">
@@ -168,7 +184,7 @@ class NaverMapComponent extends React.Component {
                     onOk={this.handleOk}
                     footer={[null,null]}
                 >
-                    <h1>내 주위 승강시설 공사중인 지하철역</h1>
+                    <h1>승강시설 공사중 지하철역</h1>
                     <p>이 사이트는 내 주위에 승강시설 정비중인 지하철에 대한 정보를 제공합니다.<br />
                      원활한 서비스 이용을 위해 현재 위치를 허용해주어 더 빠르게 서비스를 이용할 수 있도록 해주세요.
                      <br/>위치 정보 수집 허용 후 확인을 눌러주세요
@@ -186,7 +202,10 @@ class NaverMapComponent extends React.Component {
                     // controlled center
                     // Not defaultCenter={this.state.center}
                     center={this.state.center}                              
-                    onCenterChanged={center => this.setState({ center })}
+                    onCenterChanged={center => {
+                        this.setState({ center })
+                    }
+                    }
                    > 
                     {this.state.Markers}
                 </NaverMap>
