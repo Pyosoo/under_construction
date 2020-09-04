@@ -21,28 +21,28 @@ function Sidebox(props){
         let Lineimg = null;
         switch(data.line){
             case "1호선" :
-                Lineimg = <img className="Sidebox_listitem_img" src={line1} ></img>
+                Lineimg = <img alt="" className="Sidebox_listitem_img" src={line1} ></img>
                 break;
             case "2호선" :
-                Lineimg = <img className="Sidebox_listitem_img" src={line2} ></img>
+                Lineimg = <img alt="" className="Sidebox_listitem_img" src={line2} ></img>
                 break;
             case "3호선" :
-                Lineimg = <img className="Sidebox_listitem_img" src={line3} ></img>
+                Lineimg = <img alt="" className="Sidebox_listitem_img" src={line3} ></img>
                 break;
             case "4호선" :
-                Lineimg = <img className="Sidebox_listitem_img" src={line4} ></img>
+                Lineimg = <img alt="" className="Sidebox_listitem_img" src={line4} ></img>
                 break;
             case "5호선" :
-                Lineimg = <img className="Sidebox_listitem_img" src={line5} ></img>
+                Lineimg = <img alt="" className="Sidebox_listitem_img" src={line5} ></img>
                 break;
             case "6호선" :
-                Lineimg = <img className="Sidebox_listitem_img" src={line6} ></img>
+                Lineimg = <img alt="" className="Sidebox_listitem_img" src={line6} ></img>
                 break;
             case "7호선" :
-                Lineimg = <img className="Sidebox_listitem_img" src={line7} ></img>
+                Lineimg = <img alt="" className="Sidebox_listitem_img" src={line7} ></img>
                 break;
             case "8호선" :
-                Lineimg = <img className="Sidebox_listitem_img" src={line8} ></img>
+                Lineimg = <img alt="" className="Sidebox_listitem_img" src={line8} ></img>
                 break;
             default : 
                 Lineimg = null
