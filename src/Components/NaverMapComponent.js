@@ -114,7 +114,7 @@ class NaverMapComponent extends React.Component {
             console.log("fetchUsers 실행");
             try {
               const response = await axios.get(
-                'http://underproject.pythonanywhere.com/api/'
+                'https://underproject.pythonanywhere.com/api/'
               );
               // ====================api에서 불러온 json 배열로 Marker를 만들어서 list2에 저장해놓는다.
               response.data.map(data=>{
