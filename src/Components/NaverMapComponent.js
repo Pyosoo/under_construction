@@ -183,24 +183,26 @@ class NaverMapComponent extends React.Component {
                 <div className="position_box">
                     <button onClick={this.panToMe} className="MyPositionBtn"></button>
                 </div>
+                {/* ant-modal-content 가 class명 기본 */}
                 <Modal
-                    className="start_Modal"
+                    className="start_Modal" 
                     title="Notice"
                     visible={this.state.visible}
                     onOk={this.handleOk}
                     footer={[null,null]}
                 >
-                    <h1>승강시설 공사중 지하철역</h1>
-                    <p>이 사이트는 내 주위에 승강시설 정비중인 지하철에 대한 정보를 제공합니다.<br />
+                    <p className="ant-modal-content-header">승강시설 공사중 지하철역</p>
+                    <p className="ant-modal-content-content">이 사이트는 내 주위에 승강시설 정비중인 지하철에 대한 정보를 제공합니다.<br />
                      원활한 서비스 이용을 위해 현재 위치를 허용해주어 더 빠르게 서비스를 이용할 수 있도록 해주세요.
                      <br/>위치 정보 수집 허용 후 확인을 눌러주세요
-                     <button className="button2 btn2" onClick={this.handleOk}>시작하기</button>
+                     <button className="button2 btn2" onClick={this.handleOk}>확인</button>
                     </p>
                 </Modal>
                 <Sidebox />
+                {/* redux 통한 update이 좌표 update가 되면 render되어 화면 center이동 */}
                 <NaverMap
                     id='Mymap'
-                    style={{ width: '100%', height: '90vh' }}
+                    style={{ width: '100%', height: '93.36vh' }}
                     defaultZoom={16}
                     center={{ lat: this.props.storeData.clikedX, lng: this.props.storeData.clikedY }}
                    > 

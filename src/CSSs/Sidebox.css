@@ -8,8 +8,8 @@
         position: absolute;
         top: 50px;
         right: 0;
-        width: 100px;
-        height: 300px;
+        width: 140px;
+        height: 200px;
         z-index: 3;
         background-color: white;
         border-style: solid;
@@ -17,8 +17,12 @@
         border-color: black;
         overflow-y: scroll;
     }
+    .Box_Container::-webkit-scrollbar{
+        width: 0;
+    }
     .Sidebox_header{
-        width: 100%;
+        position: fixed;
+        width: 140px;
         height: 50px;
         border-style: solid;
         border-width: 0 0 3px 0;
@@ -28,7 +32,8 @@
         text-align: center;
         line-height: 50px;
         vertical-align: middle;
-        font-size: 10px;
+        font-size: 14px;
+        padding-right: 10px;
     }
     .Sidebox_listitem {
         display: flex;
@@ -46,8 +51,8 @@
         cursor: pointer;
     }
     .Sidebox_listitem_img{
-        width: 20px;
-        height: 10px;
+        width: 30px;
+        height: 23px;
         margin-top: 6px;
         margin-left: auto;
     }
@@ -66,6 +71,9 @@
         border-width: 1px 1px 1px 1px;
         border-color: black;
         overflow-y: scroll;
+    }
+    .Box_Container::-webkit-scrollbar{
+        width: 0;
     }
     .Sidebox_header{
         width: 100%;

@@ -61,7 +61,7 @@ function Sidebox(props){
 
     return(
         <div className="Box_Container">
-            <h3 className="Sidebox_header">공사중 지하철역 목록</h3>
+            <h3 className="Sidebox_header">목록</h3>
             {list}
         </div>
     )
