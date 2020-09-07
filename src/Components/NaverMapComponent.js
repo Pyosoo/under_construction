@@ -44,6 +44,36 @@ function getLocation() {
     }
 }
 
+let arrivelist = '';
+// ■■■■■■■■■■■■■■■■■■■■■■■■■■■ 로드 시 지하철 실시간 도착 정보 받아오기 ■■■■■■■■■■■■■■■■■■■■■■■■■■■
+const getStationTimeData = async(subwayname) => {
+    arrivelist = '';    //이전에 있던 데이터를 지워주고
+    try{
+        const response = await axios.get(`http://swopenapi.seoul.go.kr/api/subway/43626f6279736e73313031726e5a7044/json/realtimeStationArrival/0/999/${subwayname}`);
+        console.log(response.data.realtimeArrivalList);
+        response.data.realtimeArrivalList.map(data=>{
+            arrivelist += `${data.trainLineNm} ${data.arvlMsg2} \n`
+        }) 
+    } catch(e){
+        console.log(e);
+    }
+/*
+    axios.get(`http://swopenapi.seoul.go.kr/api/subway/43626f6279736e73313031726e5a7044/json/realtimeStationArrival/0/999/${subwayname}`)
+        .then(response => {
+            //응답 성공시
+            console.log(response.data.realtimeArrivalList);
+            
+            response.data.realtimeArrivalList.map(data=>{
+                arrivelist += `${data.trainLineNm} ${data.arvlMsg2} + '\n'`
+            }) 
+            alert(arrivelist)
+        })
+        .catch(e => {
+            console.log(e);
+        });*/
+}
+
+
 
 
 
@@ -109,30 +139,50 @@ class NaverMapComponent extends React.Component {
     componentWillMount() {
         navermaps = window.naver.maps;
         let Database = DB;
-        // ================================= api불러오는 코드
+        // ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 지하철 공사중인 Data api불러오는 코드 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
         const fetchUsers = async() => {
             console.log("fetchUsers 실행");
             try {
               const response = await axios.get(
                 'https://underproject.pythonanywhere.com/api/'
               );
-              // ====================api에서 불러온 json 배열로 Marker를 만들어서 list2에 저장해놓는다.
+              // api에서 불러온 json 배열로 Marker를 만들어서 list2에 저장해놓는다.
               response.data.map(data=>{
                 let station_information = [];
                 data.elevating_equipment.map(data2=>{
-                    station_information.push(`▲ 위치:${data2.location}  시설:${data2.facility}  상태:${data2.status} \n`)
+                    station_information.push(`▲${data2.location} ${data2.facility}  상태:${data2.status} \n`)
                     })
                     list2.push(
                         <Marker
                             key={data.id}
                             position={new navermaps.LatLng(Subway[data.name][0], Subway[data.name][1])}
                             animation={2}
-                            onClick={()=>
-                                swal({
-                                    width: 'max-content',
-                                    title: `${data.name}역`,
-                                    text : station_information.join('')
-                                    })
+                            onClick={()=>{
+                                getStationTimeData(data.name);      // aysnc await로 api에서 데이터를 읽어 arrivelist에 저장한다
+                                
+                                swal(`${data.name}역`, {
+                                    buttons: {
+                                      공사정보: {
+                                        value : "const"
+                                      },
+                                      도착정보: {
+                                        value: "arrive",
+                                      }
+                                    },
+                                  })
+                                  .then((value) => {
+                                    switch (value) {
+                                      case "const":
+                                        swal(station_information.join(''));
+                                        break;
+                                   
+                                      default:
+                                        swal(arrivelist);
+                                    }
+                                  });
+
+
+                                }
                             }
                         />
                     )
@@ -158,6 +208,8 @@ class NaverMapComponent extends React.Component {
                 icon={walk}
             />
         )
+
+
     }
 
     // 맨 처음 공지사항 모달 관련 

@@ -41,6 +41,9 @@
     .swal-modal{
         width: 320px;
     }
+    .swal-text{
+        font-size: 15px;
+    }
     .button2 {
         display: inline-block;
         width: 130px;
@@ -156,6 +159,9 @@
     }
     .swal-modal{
         width: 520px;
+    }
+    .swal-text{
+        font-size: 20px;
     }
     .button2 {
         display: inline-block;

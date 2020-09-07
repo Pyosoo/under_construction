@@ -1,6 +1,7 @@
 import React from 'react';
 import '../CSSs/Sidebox.css';
 import store from '../store';
+import axios from 'axios';
 import { connect } from 'react-redux';
 import { actionCreators } from '../store';
 import Subway from '../Data/Subway.json';
@@ -12,6 +13,7 @@ import line5 from '../Images/line5.png';
 import line6 from '../Images/line6.png';
 import line7 from '../Images/line7.png';
 import line8 from '../Images/line8.png';
+
 
 
 function Sidebox(props){
@@ -51,7 +53,7 @@ function Sidebox(props){
             <div key={data.id} id={Subway[data.name]} onClick={(e)=>{
                 //해당 div클릭시 store에 그 좌표를 update해줘서 좌표로 지도이동할수있도록하기
                 e.preventDefault();
-                props.updateState(props.storeData.fromAPI, Subway[data.name][0],  Subway[data.name][1]);
+                props.updateState(props.storeData.fromAPI, Subway[data.name][0],  Subway[data.name][1]);                
             }} className="Sidebox_listitem">
                 <p>{data.name}</p>
                 {Lineimg}
