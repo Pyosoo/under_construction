@@ -49,7 +49,7 @@ let arrivelist = '';
 const getStationTimeData = async(subwayname) => {
     arrivelist = '';    //이전에 있던 데이터를 지워주고
     try{
-        const response = await axios.get(`https://swopenapi.seoul.go.kr/api/subway/5871664864736e733131327175624856/json/realtimeStationArrival/0/999/${subwayname}`);
+        const response = await axios.get(`http://swopenAPI.seoul.go.kr/api/subway/5871664864736e733131327175624856/json/realtimeStationArrival/0/999/${subwayname}`);
         console.log(response.data.realtimeArrivalList);
         response.data.realtimeArrivalList.map(data=>{
             arrivelist += `${data.trainLineNm} ${data.arvlMsg2} \n`
