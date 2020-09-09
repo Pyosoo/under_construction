@@ -49,8 +49,7 @@ let arrivelist = '';
 const getStationTimeData = async(subwayname) => {
     arrivelist = '';    //이전에 있던 데이터를 지워주고
     try{
-        console.log(subwayname)
-        const response = await axios.get(`https://under-construction-project.herokuapp.com/api/${subwayname}`);
+        const response = await axios.get(`https://under-construction-project.herokuapp.com/api/${subwayname}/`);
         console.log(response.data.realtimeArrivalList);
         response.data.realtimeArrivalList.map(data=>{
             arrivelist += `${data.trainLineNm} ${data.arvlMsg2} \n`
