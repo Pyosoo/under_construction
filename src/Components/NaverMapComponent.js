@@ -6,6 +6,7 @@ import { actionCreators } from '../store';
 import axios from 'axios';
 import { Modal, Button } from 'antd';
 import swal from 'sweetalert';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 // Image import
 import DB from '../Data/DB.json'
@@ -44,7 +45,7 @@ function getLocation() {
     }
 }
 
-let arrivelist = '';
+let arrivelist = '잠시만 기다려주세요....';
 // ■■■■■■■■■■■■■■■■■■■■■■■■■■■ 로드 시 지하철 실시간 도착 정보 받아오기 ■■■■■■■■■■■■■■■■■■■■■■■■■■■
 const getStationTimeData = async(subwayname) => {
     arrivelist = '';    //이전에 있던 데이터를 지워주고
@@ -100,6 +101,7 @@ class NaverMapComponent extends React.Component {
             MyMarkerIndex : 999,
             Markers : [],
             visible : true,
+            isLoading : true
         }
 
         this.panToMe = this.panToMe.bind(this);
@@ -147,6 +149,8 @@ class NaverMapComponent extends React.Component {
               const response = await axios.get(
                 'https://under-construction-project.herokuapp.com/api/'
               );
+              console.log(response.data);
+              this.props.updateState(response.data, this.props.storeData.clikedX, this.props.storeData.clikedY);
               // api에서 불러온 json 배열로 Marker를 만들어서 list2에 저장해놓는다.
               response.data.map(data=>{
                 let station_information = [];
@@ -189,16 +193,18 @@ class NaverMapComponent extends React.Component {
                     )
                 });
               this.setState({
-                APIdata : response.data
+                APIdata : response.data,
+                isLoading : false,
+                Markers : list2
               }); // 데이터는 response.data 안에 들어있습니다.
-              this.props.updateState(response.data);
             } catch (e) {
               console.log(e)
             }
           };
       
           fetchUsers();
-          this.props.updateState(this.props.storeData.fromAPI,Currentx, Currenty);
+          console.log("fetchUsers 하고 난 후 api 값");
+          console.log(this.props.storeData.fromAPI);
 
         //◆현재위치 마커 추가하기                                                
         list2.push(
@@ -210,7 +216,7 @@ class NaverMapComponent extends React.Component {
             />
         )
 
-
+                // willmount 종료
     }
 
     // 맨 처음 공지사항 모달 관련 
@@ -219,7 +225,7 @@ class NaverMapComponent extends React.Component {
           visible: false,
         });
         this.panToMe();
-      };
+    };
 
 
 
@@ -253,14 +259,31 @@ class NaverMapComponent extends React.Component {
                 </Modal>
                 <Sidebox />
                 {/* redux 통한 update이 좌표 update가 되면 render되어 화면 center이동 */}
+                
+                {/* api가 불러와지면 isLoading = false , 아직 안불러왓으면 true */}
+                {/*{this.state.isLoading === true ?  
+                    <div className="LoadingBar">
+                        <CircularProgress />
+                    </div>
+                    : 
+                    <NaverMap
+                    id='Mymap'
+                    style={{ width: '100%', height: '93.36vh' }}
+                    defaultZoom={16}
+                    center={{ lat: this.props.storeData.clikedX, lng: this.props.storeData.clikedY }}
+                    > 
+                    {this.state.Markers}
+                    </NaverMap>
+                } */}
                 <NaverMap
                     id='Mymap'
                     style={{ width: '100%', height: '93.36vh' }}
                     defaultZoom={16}
                     center={{ lat: this.props.storeData.clikedX, lng: this.props.storeData.clikedY }}
-                   > 
+                    > 
                     {this.state.Markers}
-                </NaverMap>
+                    </NaverMap>
+               
             </div>
         )
     }

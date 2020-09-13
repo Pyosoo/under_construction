@@ -1,4 +1,10 @@
 @media (min-width: 320px) and (max-width: 450px){
+    .LoadingBar{
+        width: 100%;
+        line-height: 100vh;
+        vertical-align: middle;
+        text-align: center;
+    }
     .position_box{
         position: fixed;
         top: 55px; /* navibar 가 50px이므로 그것보다 살짝더 크게한것  */
@@ -111,6 +117,12 @@
 }
 
 @media (min-width: 450px) {
+    .LoadingBar{
+        width: 100%;
+        line-height: 100vh;
+        vertical-align: middle;
+        text-align: center;
+    }
     .position_box{
         position: fixed;
         top: 55px; /* navibar 가 50px이므로 그것보다 살짝더 크게한것  */

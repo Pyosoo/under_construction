@@ -19,6 +19,7 @@ import line8 from '../Images/line8.png';
 function Sidebox(props){
     console.log("sidebox render")
     let list = []; //공사중인 지하철역에 대한 element요소를 담아둘 배열
+    console.log(props.storeData.fromAPI)
     props.storeData.fromAPI.map(data=>{
         let Lineimg = null;
         switch(data.line){
