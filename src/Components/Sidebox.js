@@ -56,7 +56,7 @@ function Sidebox(props){
                 e.preventDefault();
                 props.updateState(props.storeData.fromAPI, Subway[data.name][0],  Subway[data.name][1]);                
             }} className="Sidebox_listitem">
-                <p>{data.name}</p>
+                <p className="Sidebox_listitem_name">{data.name}</p>
                 {Lineimg}
             </div>
         )

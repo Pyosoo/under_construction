@@ -27,7 +27,7 @@ const updateState = (fromAPI, x, y) => {
 }
 
 //3. reducer를 생성한다. state와 action을 입력 받고 바뀐 결과 state를 return 한다.
-const reducer = (state = {fromAPI : [], clikedX:0, clikedY:0}, action) =>{
+const reducer = (state = {fromAPI : [], clikedX:37.560989, clikedY:126.986325}, action) =>{
     switch(action.type){
         case UPDATE:
             console.log("update store");

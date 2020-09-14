@@ -48,6 +48,9 @@
         font-size: 8px;
         padding-left: 10px;
     }
+    .listitem_name{
+        width: 80px;
+    }
     .Sidebox_listitem:hover{
         cursor: pointer;
     }
@@ -59,11 +62,10 @@
     }
 }
 @media (min-width: 500px) {
-
     .Box_Container {
         position: absolute;
         top: 120px;
-        left: 10px;
+        right: 10px;
         width: 200px;
         height: 600px;
         z-index: 3;
@@ -99,6 +101,9 @@
         font-family: sans-serif;
         font-weight: 500;
         padding-left: 10px;
+    }
+    .Sidebox_listitem_name{
+        font-size: 0.8em;
     }
     .Sidebox_listitem:hover{
         cursor: pointer;

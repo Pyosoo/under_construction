@@ -25,7 +25,7 @@ import Sidebox from './Sidebox';
 
 
 // =====================================================================================================현재위치 받아오기 위한 함수
-let Currentx=37.497175, Currenty=127.027926;        //초기 위치는 강남역으로
+let Currentx = 37.497175, Currenty = 127.027926;        //초기 위치는 강남역으로
 let MyX, MyY;
 function getLocation() {
     console.log("getLocatoin 실행");
@@ -47,32 +47,32 @@ function getLocation() {
 
 let arrivelist = '잠시만 기다려주세요....';
 // ■■■■■■■■■■■■■■■■■■■■■■■■■■■ 로드 시 지하철 실시간 도착 정보 받아오기 ■■■■■■■■■■■■■■■■■■■■■■■■■■■
-const getStationTimeData = async(subwayname) => {
+const getStationTimeData = async (subwayname) => {
     arrivelist = '';    //이전에 있던 데이터를 지워주고
-    try{
+    try {
         const response = await axios.get(`https://under-construction-project.herokuapp.com/api/${subwayname}/`);
         console.log(response.data.realtimeArrivalList);
-        response.data.realtimeArrivalList.map(data=>{
+        response.data.realtimeArrivalList.map(data => {
             arrivelist += `${data.trainLineNm} ${data.arvlMsg2} \n`
-        }) 
-    } catch(e){
+        })
+    } catch (e) {
         arrivelist = "도착정보가 없습니다.";
         console.log(e);
     }
-/*
-    axios.get(`http://swopenapi.seoul.go.kr/api/subway/43626f6279736e73313031726e5a7044/json/realtimeStationArrival/0/999/${subwayname}`)
-        .then(response => {
-            //응답 성공시
-            console.log(response.data.realtimeArrivalList);
-            
-            response.data.realtimeArrivalList.map(data=>{
-                arrivelist += `${data.trainLineNm} ${data.arvlMsg2} + '\n'`
-            }) 
-            alert(arrivelist)
-        })
-        .catch(e => {
-            console.log(e);
-        });*/
+    /*
+        axios.get(`http://swopenapi.seoul.go.kr/api/subway/43626f6279736e73313031726e5a7044/json/realtimeStationArrival/0/999/${subwayname}`)
+            .then(response => {
+                //응답 성공시
+                console.log(response.data.realtimeArrivalList);
+                
+                response.data.realtimeArrivalList.map(data=>{
+                    arrivelist += `${data.trainLineNm} ${data.arvlMsg2} + '\n'`
+                }) 
+                alert(arrivelist)
+            })
+            .catch(e => {
+                console.log(e);
+            });*/
 }
 
 
@@ -85,10 +85,10 @@ const getStationTimeData = async(subwayname) => {
 //========================================== 네이버지도 불러오는 함수 ============================================================
 let navermaps;
 let MarkerIndex = 0;  //마커의 key에 쓰일 index
-let list, list2=[];
+let list, list2 = [];
 //var jeju = new navermaps.LatLng(33.3590628, 126.534361);
 
-               
+
 getLocation();
 
 class NaverMapComponent extends React.Component {
@@ -97,41 +97,41 @@ class NaverMapComponent extends React.Component {
 
         this.state = {
             center: { lat: Currentx, lng: Currenty },
-            APIdata : [],
-            MyMarkerIndex : 999,
-            Markers : [],
-            visible : true,
-            isLoading : true
+            APIdata: [],
+            MyMarkerIndex: 999,
+            Markers: [],
+            visible: true,
+            isLoading: true
         }
 
         this.panToMe = this.panToMe.bind(this);
     }
 
     panToMe() {
-        let list3 = list2.filter(data=>parseInt(data.key) != this.state.MyMarkerIndex);
+        let list3 = list2.filter(data => parseInt(data.key) != this.state.MyMarkerIndex);
         list3.push(     //새로만드는 마커의 key를 주어서 안겹치도록 아무수나 넣도록 하자.
-                <Marker
-                    key={this.state.MyMarkerIndex+1}
-                    position={new navermaps.LatLng(MyX, MyY)}
-                    animation={1}
-                    icon={pin}
-                />)
-            
+            <Marker
+                key={this.state.MyMarkerIndex + 1}
+                position={new navermaps.LatLng(MyX, MyY)}
+                animation={1}
+                icon={pin}
+            />)
+
         list2 = list3;
-        this.setState({ Markers : list2 })
-        this.setState({ MyMarkerIndex : this.state.MyMarkerIndex+1})
+        this.setState({ Markers: list2 })
+        this.setState({ MyMarkerIndex: this.state.MyMarkerIndex + 1 })
         this.props.updateState(this.props.storeData.fromAPI, MyX, MyY);
     }
 
 
 
-    checkCenter(){
+    checkCenter() {
         // 만약 현재 store에 저장된 x,y가 subway에 저장되어있는 값과 같은게 있다면 
         // setState center를 통해 이동하면된다.
-        for(let key in Subway){
-            if(Subway[key][0] == this.props.storeData.clikedX){
+        for (let key in Subway) {
+            if (Subway[key][0] == this.props.storeData.clikedX) {
                 this.props.updateState(this.props.storeData.fromAPI, Currentx, Currenty);
-                this.setState({center : {lat: Subway[key][0], lng: Subway[key][1]}});
+                this.setState({ center: { lat: Subway[key][0], lng: Subway[key][1] } });
                 break;
             }
         }
@@ -143,68 +143,70 @@ class NaverMapComponent extends React.Component {
         navermaps = window.naver.maps;
         let Database = DB;
         // ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ 지하철 공사중인 Data api불러오는 코드 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-        const fetchUsers = async() => {
-            console.log("fetchUsers 실행");
+        const GetConstDataFromAPI = async () => {
+            console.log("GetConstDataFromAPI 실행");
             try {
-              const response = await axios.get(
-                'https://under-construction-project.herokuapp.com/api/'
-              );
-              console.log(response.data);
-              this.props.updateState(response.data, this.props.storeData.clikedX, this.props.storeData.clikedY);
-              // api에서 불러온 json 배열로 Marker를 만들어서 list2에 저장해놓는다.
-              response.data.map(data=>{
-                let station_information = [];
-                data.elevating_equipment.map(data2=>{
-                    station_information.push(`▲${data2.location} ${data2.facility}  상태:${data2.status} \n`)
+                const response = await axios.get(
+                    'https://under-construction-project.herokuapp.com/api/'
+                );
+                console.log(response.data);
+                this.props.updateState(response.data, this.props.storeData.clikedX, this.props.storeData.clikedY);
+                // api에서 불러온 json 배열로 Marker를 만들어서 list2에 저장해놓는다.
+                response.data.map(data => {
+                    let station_information = [];
+                    data.elevating_equipment.map(data2 => {
+                        station_information.push(`▲${data2.location} ${data2.facility}  상태:${data2.status} \n`)
                     })
+                    console.log(`${data.name} 역 마커 생성`)
+                    console.log(`latlng = (${Subway[data.name][0]}, ${Subway[data.name][1]})`)
                     list2.push(
                         <Marker
                             key={data.id}
                             position={new navermaps.LatLng(Subway[data.name][0], Subway[data.name][1])}
                             animation={2}
-                            onClick={()=>{
+                            onClick={() => {
                                 getStationTimeData(data.name);      // aysnc await로 api에서 데이터를 읽어 arrivelist에 저장한다
-                                
+
                                 swal(`${data.name}역`, {
                                     buttons: {
-                                      공사정보: {
-                                        value : "const"
-                                      },
-                                      도착정보: {
-                                        value: "arrive",
-                                      }
+                                        공사정보: {
+                                            value: "const"
+                                        },
+                                        도착정보: {
+                                            value: "arrive",
+                                        }
                                     },
-                                  })
-                                  .then((value) => {
-                                    switch (value) {
-                                      case "const":
-                                        swal(station_information.join(''));
-                                        break;
-                                   
-                                      default:
-                                        swal(arrivelist);
-                                    }
-                                  });
+                                })
+                                    .then((value) => {
+                                        switch (value) {
+                                            case "const":
+                                                swal(station_information.join(''));
+                                                break;
+
+                                            default:
+                                                swal(arrivelist);
+                                        }
+                                    });
 
 
-                                }
+                            }
                             }
                         />
                     )
                 });
-              this.setState({
-                APIdata : response.data,
-                isLoading : false,
-                Markers : list2
-              }); // 데이터는 response.data 안에 들어있습니다.
+                this.setState({
+                    APIdata: response.data,
+                    isLoading: false,
+                    Markers: list2
+                }); // 데이터는 response.data 안에 들어있습니다.
             } catch (e) {
-              console.log(e)
+                console.log(e)
             }
-          };
-      
-          fetchUsers();
-          console.log("fetchUsers 하고 난 후 api 값");
-          console.log(this.props.storeData.fromAPI);
+        };
+
+        GetConstDataFromAPI();
+        console.log("GetConstDataFromAPI 하고 난 후 api 값");
+        console.log(this.props.storeData.fromAPI);
 
         //◆현재위치 마커 추가하기                                                
         list2.push(
@@ -216,13 +218,13 @@ class NaverMapComponent extends React.Component {
             />
         )
 
-                // willmount 종료
+        // willmount 종료
     }
 
     // 맨 처음 공지사항 모달 관련 
     handleOk = e => {
         this.setState({
-          visible: false,
+            visible: false,
         });
         this.panToMe();
     };
@@ -244,22 +246,22 @@ class NaverMapComponent extends React.Component {
                 </div>
                 {/* ant-modal-content 가 class명 기본 */}
                 <Modal
-                    className="start_Modal" 
+                    className="start_Modal"
                     title="Notice"
                     visible={this.state.visible}
                     onOk={this.handleOk}
-                    footer={[null,null]}
+                    footer={[null, null]}
                 >
                     <p className="ant-modal-content-header">승강시설 공사중 지하철역</p>
                     <p className="ant-modal-content-content">이 사이트는 내 주위에 승강시설 정비중인 지하철에 대한 정보를 제공합니다.<br />
                      원활한 서비스 이용을 위해 현재 위치를 허용해주어 더 빠르게 서비스를 이용할 수 있도록 해주세요.
-                     <br/>위치 정보 수집 허용 후 확인을 눌러주세요
+                     <br />위치 정보 수집 허용 후 확인을 눌러주세요
                      <button className="button2 btn2" onClick={this.handleOk}>확인</button>
                     </p>
                 </Modal>
                 <Sidebox />
                 {/* redux 통한 update이 좌표 update가 되면 render되어 화면 center이동 */}
-                
+
                 {/* api가 불러와지면 isLoading = false , 아직 안불러왓으면 true */}
                 {/*{this.state.isLoading === true ?  
                     <div className="LoadingBar">
@@ -280,10 +282,11 @@ class NaverMapComponent extends React.Component {
                     style={{ width: '100%', height: '93.36vh' }}
                     defaultZoom={16}
                     center={{ lat: this.props.storeData.clikedX, lng: this.props.storeData.clikedY }}
-                    > 
+                   /* onCenterChanged={center => console.log(center)} 지하철 변동사항생기면 좌표확인용*/
+                >
                     {this.state.Markers}
-                    </NaverMap>
-               
+                </NaverMap>
+
             </div>
         )
     }
@@ -302,7 +305,7 @@ function mapStateToProps(state, ownProps) {
 // reducer에 action을 알리는 함수 
 function mapDispatchToProps(dispatch) {
     return {
-        updateState: (fromAPI,x,y) => dispatch(actionCreators.updateState(fromAPI,x,y))
+        updateState: (fromAPI, x, y) => dispatch(actionCreators.updateState(fromAPI, x, y))
     };
 }
 
