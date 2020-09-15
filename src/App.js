@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { UserOutlined } from '@ant-design/icons';
-import { RenderAfterNavermapsLoaded, NaverMap, Marker } from 'react-naver-maps'; // 패키지 불러오기
+import React from 'react';
+import { RenderAfterNavermapsLoaded } from 'react-naver-maps'; // 패키지 불러오기
 import './App.css';
-import DB from './Data/DB.json'
-import walk from './Images/walk.png';
 import NaverMapComponent from './Components/NaverMapComponent.js';
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
-import store from './store';
 import Navibar from './Components/Navaibar';
 
 /*
@@ -20,7 +16,7 @@ const app = express();
 
 function App(props) {
 
-  console.log("App render");
+//  console.log("App render");
   return (
     <div>
       <Navibar />

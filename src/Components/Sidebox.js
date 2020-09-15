@@ -1,7 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../CSSs/Sidebox.css';
-import store from '../store';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import { actionCreators } from '../store';
 import Subway from '../Data/Subway.json';
@@ -17,10 +15,28 @@ import line8 from '../Images/line8.png';
 
 
 function Sidebox(props){
-    console.log("sidebox render")
+
+    const changeSidebox = () => {
+        if(DPmodeIndex === 0){
+            setDPmodeIndex(1);
+            setDPmode('Sidebox_close');
+            setDPtotal('Box_Container_hidden');
+            setDPbutton('DownWhite');
+        }else{
+            setDPmodeIndex(0);
+            setDPmode('Sidebox_open');
+            setDPtotal('Box_Container')
+            setDPbutton('UpWhite');
+        }
+    }
+    const [DPtotal, setDPtotal] = useState('Box_Container');
+    const [DPmode, setDPmode] = useState('Sidebox_body');
+    const [DPbutton, setDPbutton] = useState('UpWhite')
+    const [DPmodeIndex, setDPmodeIndex] = useState(0);
+//    console.log("sidebox render")
     let list = []; //공사중인 지하철역에 대한 element요소를 담아둘 배열
-    console.log(props.storeData.fromAPI)
-    props.storeData.fromAPI.map(data=>{
+ //   console.log(props.storeData.fromAPI)
+    props.storeData.fromAPI.forEach(data=>{
         let Lineimg = null;
         switch(data.line){
             case "1호선" :
@@ -63,9 +79,14 @@ function Sidebox(props){
     })
 
     return(
-        <div className="Box_Container">
-            <h3 className="Sidebox_header">목록</h3>
-            {list}
+        <div className={DPtotal}>
+            <div className="Sidebox_header">
+                <div className={DPbutton} onClick={changeSidebox}></div>
+                <p className="Sidebox_toptext">목록</p>
+            </div>
+            <div className={DPmode}>
+                {list}
+            </div>
         </div>
     )
 }

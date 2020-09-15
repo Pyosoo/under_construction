@@ -7,35 +7,79 @@
     .Box_Container {
         position: absolute;
         top: 50px;
-        right: 0;
-        width: 140px;
-        height: 200px;
+        right: 0px;
+        width: 170px;
+        height: 600px;
         z-index: 3;
         background-color: white;
         border-style: solid;
         border-width: 1px 1px 1px 1px;
         border-color: black;
         overflow-y: scroll;
+        overflow-x: hidden;
+        transition: all ease 0.5s 0s;
+    }
+    .Box_Container_hidden{ 
+        position: absolute;
+        top: 50px;
+        right: 0px;
+        width: 50px;
+        height: 45px;
+        z-index: 3;
+        background-color: white;
+        border-style: solid;
+        border-width: 1px 1px 1px 1px;
+        border-color: black;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        transition: all ease 0.5s 0s;
     }
     .Box_Container::-webkit-scrollbar{
         width: 0;
     }
     .Sidebox_header{
+        display: flex;
         position: fixed;
-        top: 50px;
-        width: 140px;
-        height: 50px;
+        width: 200px;
+        height: 45px;
         border-style: solid;
         border-width: 0 0 3px 0;
         background-color: rgb(46, 46, 46);
         color: white;
         font-family: BMJ;
         text-align: center;
-        line-height: 50px;
+        line-height: 45px;
         vertical-align: middle;
-        font-size: 14px;
-        padding-right: 10px;
     }
+    .Sidebox_toptext{
+        margin-left: 40px;
+    }
+    .UpWhite{
+        width: 40px;
+        height: 60%;
+        margin-left: 10px;
+        margin-top: 7px;
+        background-image: url('../Images/UpWhite.jpg.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .UpWhite:hover{
+        cursor: pointer;
+    }
+    .DownWhite{
+        width: 40px;
+        height: 60%;
+        margin-left: 10px;
+        margin-top: 7px;
+        background-image: url('../Images/DownWhite.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .DownWhite:hover{
+        cursor: pointer;
+    }
+
+
     .Sidebox_listitem {
         display: flex;
         width: 100%;
@@ -64,7 +108,7 @@
 @media (min-width: 500px) {
     .Box_Container {
         position: absolute;
-        top: 120px;
+        top: 70px;
         right: 10px;
         width: 200px;
         height: 600px;
@@ -74,11 +118,27 @@
         border-width: 1px 1px 1px 1px;
         border-color: black;
         overflow-y: scroll;
+        transition: all ease 1s 0s;
+    }
+    .Box_Container_hidden{ 
+        position: absolute;
+        top: 70px;
+        right: 0px;
+        width: 50px;
+        height: 45px;
+        z-index: 3;
+        background-color: white;
+        border-style: solid;
+        border-width: 1px 1px 1px 1px;
+        border-color: black;
+        overflow-y: hidden;
+        transition: all ease 1s 0s;
     }
     .Box_Container::-webkit-scrollbar{
         width: 0;
     }
     .Sidebox_header{
+        display: flex;
         position: fixed;
         width: 200px;
         height: 45px;
@@ -91,6 +151,35 @@
         line-height: 45px;
         vertical-align: middle;
     }
+    .Sidebox_toptext{
+        margin-left: 40px;
+    }
+    .UpWhite{
+        width: 40px;
+        height: 60%;
+        margin-left: 10px;
+        margin-top: 7px;
+        background-image: url('../Images/UpWhite.jpg.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .UpWhite:hover{
+        cursor: pointer;
+    }
+    .DownWhite{
+        width: 40px;
+        height: 60%;
+        margin-left: 10px;
+        margin-top: 7px;
+        background-image: url('../Images/DownWhite.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .DownWhite:hover{
+        cursor: pointer;
+    }
+
+
     .Sidebox_listitem {
         display: flex;
         width: 100%;
@@ -102,6 +191,21 @@
         font-weight: 500;
         padding-left: 10px;
     }
+    
+    
+    
+    .Sidebox_body{
+        display: block;
+    }
+    .Sidebox_close{
+        display: none;
+    }
+    .Sidebox_oepn{
+        display: block;
+    }
+
+
+
     .Sidebox_listitem_name{
         font-size: 0.8em;
     }

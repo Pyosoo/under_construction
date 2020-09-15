@@ -30,7 +30,7 @@ const updateState = (fromAPI, x, y) => {
 const reducer = (state = {fromAPI : [], clikedX:37.560989, clikedY:126.986325}, action) =>{
     switch(action.type){
         case UPDATE:
-            console.log("update store");
+    //        console.log("update store");
             return {
                 fromAPI : action.fromAPI,
                 clikedX : action.x,
