@@ -29,10 +29,10 @@ function Sidebox(props){
             setDPbutton('UpWhite');
         }
     }
-    const [DPtotal, setDPtotal] = useState('Box_Container');
-    const [DPmode, setDPmode] = useState('Sidebox_body');
-    const [DPbutton, setDPbutton] = useState('UpWhite')
-    const [DPmodeIndex, setDPmodeIndex] = useState(0);
+    const [DPtotal, setDPtotal] = useState('Box_Container_hidden');
+    const [DPmode, setDPmode] = useState('Sidebox_close');
+    const [DPbutton, setDPbutton] = useState('DownWhite')
+    const [DPmodeIndex, setDPmodeIndex] = useState(1);
 //    console.log("sidebox render")
     let list = []; //공사중인 지하철역에 대한 element요소를 담아둘 배열
  //   console.log(props.storeData.fromAPI)
