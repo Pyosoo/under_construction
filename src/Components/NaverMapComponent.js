@@ -51,6 +51,7 @@ const getStationTimeData = async (subwayname) => {
         response.data.realtimeArrivalList.forEach(data => {
             arrivelist += `${data.trainLineNm} ${data.arvlMsg2} \n`
         })
+        swal(arrivelist);
     } catch (e) {
         arrivelist = "도착정보가 없습니다.";
         console.log(e);
@@ -144,7 +145,7 @@ class NaverMapComponent extends React.Component {
                             animation={2}
                             icon={warning}
                             onClick={() => {
-                                getStationTimeData(data.name);      // aysnc await로 api에서 데이터를 읽어 arrivelist에 저장한다
+                                
 
                                 swal(`${data.name}역`, {
                                     buttons: {
@@ -163,7 +164,7 @@ class NaverMapComponent extends React.Component {
                                                 break;
 
                                             default:
-                                                swal(arrivelist);
+                                                getStationTimeData(data.name);      // 지하철 도착정보 불러와서 swal을 띄워준다.
                                         }
                                     });
 
