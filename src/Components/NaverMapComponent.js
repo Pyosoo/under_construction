@@ -54,6 +54,7 @@ const getStationTimeData = async (subwayname) => {
         swal(arrivelist);
     } catch (e) {
         arrivelist = "도착정보가 없습니다.";
+        swal(arrivelist);
         console.log(e);
     }
 }
